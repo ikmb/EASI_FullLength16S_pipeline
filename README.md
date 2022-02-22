@@ -1,6 +1,6 @@
 ![](images/ikmb_bfx_logo.png)
 
-# EASI Longread Pipeline
+# EASI_FullLength16S_pipleline
 
 ## Documentation 
 
