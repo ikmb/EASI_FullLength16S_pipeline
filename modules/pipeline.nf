@@ -41,7 +41,6 @@ process demux_dada2 {
     }
 
     input:
-        //path("raw/*")
         path(biosample)
         path(barcodes)
     output:

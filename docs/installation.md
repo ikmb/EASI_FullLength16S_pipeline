@@ -30,8 +30,3 @@ profiles {
 This would add a new profile, called `your_profile` which uses (and expects) conda to provide all software. 
 
 `base.config` Basic settings about resource usage for the individual pipeline stages. 
-
-`resources.config` Gives information about the files that are to be used during analysis for the individual human genome assemblies. 
-
-`your_cluster.config` Specifies which sort of resource manager to use and where to find the GATK resource bundle on your cluster file system (see below).
-

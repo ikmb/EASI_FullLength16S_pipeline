@@ -4,17 +4,32 @@ nextflow.enable.dsl=2
 
 /**
 ===============================
-EASI_FullLength16S_pipleline
+EASI_FullLength16S_pipeline
 ===============================
 
 ### Homepage / git
-git@github.com:ikmb/EASI_FullLength16S_pipleline.git
+git@github.com:ikmb/EASI_FullLength16S_pipeline.git
 
 **/
 
 // Pipeline version
 
 params.version = workflow.manifest.version
+
+
+log.info """\
+EASI FullLength16S pipeline  v${workflow.manifest.version}
+==========================================
+Nextflow Version: $workflow.nextflow.version
+Container Engine: ${workflow.containerEngine}
+=======INPUTS=============================
+hifireads:          : ${params.hifireads}"
+ccga:               : ${params.ccga}
+movieid:            : ${params.movieid}
+"""
+log.info "=========================================="
+log.info "Command Line:     $workflow.commandLine"
+log.info "=========================================="
 
 // Help message
 helpMessage = """
@@ -53,7 +68,6 @@ def summary = [:]
 run_name = ( params.run_name == false) ? "${workflow.sessionId}" : "${params.run_name}"
 
 include {	EASI } from './workflows/main' 
-//params(params)
 
 workflow {
 
