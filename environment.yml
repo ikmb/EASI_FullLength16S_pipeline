@@ -1,0 +1,14 @@
+name: ikmb-EASI-pipe-0.1
+channels:
+  - conda-forge
+  - anaconda
+  - bioconda
+  - defaults
+dependencies:
+  - parallel 
+  - bioconductor-dada2 
+  - bioconductor-biostrings 
+  - bioconductor-shortread 
+  - r-reshape2 
+  - r-ggplot2 
+  - lima
