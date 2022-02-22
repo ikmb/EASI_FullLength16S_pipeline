@@ -24,7 +24,7 @@ jobs:
         uses: actions/checkout@v2
 
       - name: Build new docker image
-        run: docker build --no-cache . -t ikmb/EASI-pipe:devel
+        run: docker build --no-cache . -t ikmb/easi-pipe:devel
 
       - name: Push Docker image to DockerHub (latest)
         run: |

@@ -21,11 +21,11 @@ jobs:
         uses: actions/checkout@v2
 
       - name: Build new docker image
-        run: docker build --no-cache . -t ikmb/EASI-pipe:latest
+        run: docker build --no-cache . -t ikmb/easi-pipe:latest
 
       - name: Push Docker image to DockerHub (release)
         run: |
           echo "$DOCKERHUB_PASS" | docker login -u "$DOCKERHUB_USERNAME" --password-stdin
-          docker push ikmb/EASI-pipe:latest
-          docker tag ikmb/PIPELINE:latest ikmb/EASI-pipe:${{ github.event.release.tag_name }}
-          docker push ikmb/EASI-pipe:${{ github.event.release.tag_name }}
+          docker push ikmb/easi-pipe:latest
+          docker tag ikmb/easi-pipe:latest ikmb/easi-pipe:${{ github.event.release.tag_name }}
+          docker push ikmb/easi-pipe:${{ github.event.release.tag_name }}
