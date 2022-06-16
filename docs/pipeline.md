@@ -1,2 +1,2 @@
 # Pipeline structure
-![](../assets/ikmblogo.png)
+![](../assets/pipeline_dag.svg)
