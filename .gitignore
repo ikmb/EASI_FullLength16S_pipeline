@@ -1,6 +1,6 @@
 .nextflow*
 work
 results
-._*
 databases*
+._*
 *.sh

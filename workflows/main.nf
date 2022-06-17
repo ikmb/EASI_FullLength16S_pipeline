@@ -4,15 +4,12 @@ include { biosample; barcode_extraction; demux_dada2 } from '../modules/pipeline
 workflow EASI {	
 	main:
 		if(params.hifireads && params.ccga && params.movieid){
-			//pipeline_PacBio()
-
 			biosample()
 			barcode_extraction(biosample.out)
 			demux_dada2(
 				biosample.out,
 				barcode_extraction.out
 			)
-			//dada2(demux.out)
 
 		} else {
 			exit 1, "Invalid input, check that the mandatory inputs hifireads, ccga and movieid are set!"

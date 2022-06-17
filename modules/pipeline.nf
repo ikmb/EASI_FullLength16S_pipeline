@@ -35,17 +35,23 @@ process barcode_extraction {
 
 process demux_dada2 {
     scratch params.scratch
+    //scratch false
 
+    publishDir "${params.outdir}/${params.movieid}/", pattern: "filtered/*", mode: 'copy'
+    publishDir "${params.outdir}/${params.movieid}/", pattern: "RDS/*", mode: 'copy'
+    publishDir "${params.outdir}/${params.movieid}/", pattern: "tables/*", mode: 'copy'
+    publishDir "${params.outdir}/${params.movieid}/", pattern: "allout*", mode: 'copy'
+    publishDir "${params.outdir}/${params.movieid}/", pattern: "noprimers/*", mode: 'copy'
     if(params.keep_demul){
-       publishDir "${params.outdir}/${movieid}/raw/", pattern: "raw/*", mode: 'copy'
+       publishDir "${params.outdir}/${params.movieid}/", pattern: "raw/*", mode: 'copy'
     }
 
     input:
-        //path("raw/*")
         path(biosample)
         path(barcodes)
     output:
-        
+        path("*")
+        path("**/*")
     shell:
     """
         mkdir -p raw

@@ -1,8 +1,10 @@
 # Installation
 
+This pipeline depends on [Nextflow](https://www.nextflow.io/) (Version >= 20.07.0) and [Singularity](https://sylabs.io/guides/3.0/user-guide/installation.html#overview). Make sure both are installed and executable. With the first execution of this pipeline, Nextflow will download all necessary things, by default the pipeline is stored at `~/.nextflow/assets/ikmb/`. Make sure a config file for your compute system is present.
+
 ## At the IKMB
 
-If you are at the IKMB, you will not have to do anything to make this run, it is all pre-configured for our compute system(s).
+If you are at the IKMB, you will not have to do anything to make this run, it is all pre-configured for our compute system(s). Just load the modules singularity and nextflow.
  
 ## Site-specific config file
 
@@ -30,8 +32,3 @@ profiles {
 This would add a new profile, called `your_profile` which uses (and expects) conda to provide all software. 
 
 `base.config` Basic settings about resource usage for the individual pipeline stages. 
-
-`resources.config` Gives information about the files that are to be used during analysis for the individual human genome assemblies. 
-
-`your_cluster.config` Specifies which sort of resource manager to use and where to find the GATK resource bundle on your cluster file system (see below).
-
