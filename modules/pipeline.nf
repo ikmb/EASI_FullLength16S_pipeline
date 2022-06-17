@@ -41,6 +41,7 @@ process demux_dada2 {
     publishDir "${params.outdir}/${params.movieid}/", pattern: "RDS/*", mode: 'copy'
     publishDir "${params.outdir}/${params.movieid}/", pattern: "tables/*", mode: 'copy'
     publishDir "${params.outdir}/${params.movieid}/", pattern: "allout*", mode: 'copy'
+    publishDir "${params.outdir}/${params.movieid}/", pattern: "noprimers/*", mode: 'copy'
     if(params.keep_demul){
        publishDir "${params.outdir}/${params.movieid}/", pattern: "raw/*", mode: 'copy'
     }
